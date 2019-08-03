@@ -24,7 +24,7 @@ Route::post('/login', 'Auth\LoginController@authenticate');
 //professors
 Route::middleware('jwt')->get('/professors', 'ProfessorsController@index');
 Route::middleware('jwt')->post('/professors', 'ProfessorsController@store');
-Route::get('/professors/{id}', 'ProfessorsController@show');
+Route::get('/professors/{id}', 'ProfessorsController@showByUser');
 Route::middleware('jwt')->get('/professors/{id}/user', 'ProfessorsController@showByUser');
 
 //gradebooks
